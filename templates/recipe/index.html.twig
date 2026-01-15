@@ -21,11 +21,13 @@
                     <a href="{{ url('recipe.show', {id: recipe.id, slug: recipe.slug}) }}">{{ recipe.title }}</a>
                 </td>
                 <td>
-                    <a class="btn btn-primary" href="{{ path('recipe.edit', {id: recipe.id}) }}">Modifier</a>
-                    <form action="{{ path('recipe.delete', {id: recipe.id}) }}" method="POST">
-                        <input type="hidden" name="_method" value="DELETE">
-                        <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>
-                    </form>
+                    <div class="d-flex gap-1">
+                        <a class="btn btn-primary" href="{{ path('recipe.edit', {id: recipe.id}) }}">Modifier</a>
+                        <form action="{{ path('recipe.delete', {id: recipe.id}) }}" method="POST">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>
+                        </form>                
+                    </div>
                 </td>
             </tr>
         {% endfor %}
