@@ -5,7 +5,7 @@
 {% block body %}
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
     <p>
-        <a class="btn btn-primary" href="{{ path('recipe.edit', {id: recipe.id}) }}">Modifier</a>
+        <a class="btn btn-primary" href="{{ path('recipe.create') }}">Créer</a>
     </p>
     <table class="table">
         <thead>
@@ -22,6 +22,10 @@
                 </td>
                 <td>
                     <a class="btn btn-primary" href="{{ path('recipe.edit', {id: recipe.id}) }}">Modifier</a>
+                    <form action="{{ path('recipe.delete', {id: recipe.id}) }}" method="POST">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>
+                    </form>
                 </td>
             </tr>
         {% endfor %}
